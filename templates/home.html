@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Grocery</title>
+    <link rel='stylesheet' href={{ url_for('static', filename='style.css') }}>
+</head>
+<body>
+    <h1>Grocery List</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Price</th>
+                <th>Quantity</th>
+                <th>Type</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for item in groceries %}
+            <tr>
+                <td>{{ item['name'] }}</td>
+                <td>{{ item['price'] }}</td>
+                <td>{{ item['quantity'] }}</td>
+                <td>{{ item['type'] }}</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>
